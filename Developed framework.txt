@@ -118,4 +118,71 @@ save this file
 tep 5: Add and Commit Files
 git add .
 
+Then:
+git commit -m "Initial commit - Playwright automation framework setup"
 
+Step 6: Connect to GitHub Repository
+Copy the repository URL from GitHub.
+
+It will look like:
+https://github.com/yourusername/playwright-automation-framework.git
+
+Now run:
+git remote add origin https://github.com/yourusername/playwright-automation-framework.git
+
+
+Step 7: Push to GitHub
+git branch -M main
+git push -u origin main
+
+It may ask for:
+Username
+Personal Access Token (not password)
+
+
+🎯 After Push – Important Professional Tips
+Since you are a software test engineer aiming for better jobs, do this:
+1️⃣ Add a Professional README.md
+Your README should include:
+Project description
+Tech stack
+Folder structure
+How to run tests
+Sample report screenshot
+Framework design explanation
+This makes recruiters impressed.
+
+14. How to run code in jenkins server from GitHub repository?
+
+✅ STEP 2: Create New Jenkins Job
+Open Jenkins → http://localhost:8080
+Click New Item
+Enter name: Playwright-CI
+Select: Freestyle project
+Click OK
+
+STEP 3: Connect GitHub Repository
+Inside Job Configuration:
+🔹 Source Code Management
+✔ Select Git
+In Repository URL:
+https://github.com/yourusername/yourrepo.git
+Branch:
+*/main
+
+✅ STEP 4: Add Build Steps
+Scroll to Build section.
+Click:
+👉 Add build step → Execute Windows batch command
+Add this:
+npm install
+npx playwright install
+npm run regression
+
+✅ STEP 5: Save & Build
+Click Save
+Click Build Now
+Then click build number → Console Output
+You should see:
+Running tests...
+✓ Passed
