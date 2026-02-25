@@ -1,0 +1,21 @@
+{
+  "name": "playwright-ecommerce-automation-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "regression": "npx playwright test",
+    "parallel": "npx playwright test tests/runParallelly",
+    "parameterized": "npx playwright test tests/parameterized",
+    "smoke": "npx playwright test -g '@smoke'",
+    "loginAndOrder": "npx playwright test tests/completeOrderFlow"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.0"
+  }
+}

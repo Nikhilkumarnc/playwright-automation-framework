@@ -1,0 +1,121 @@
+1. Created seperate test file for each functionality(accountCreation.spec.js, login.spec.js) 
+    -> but files will run parllelly, how to run seqentially
+
+2. Written test() inside test.describe()
+
+3. Add Tagging 
+test('@smoke Create Account', async () => {})
+👉 If all tests inside describe are smoke tests → put tag on describe
+👉 If only one test is smoke → put tag on that specific test
+
+4. New thing learned how to verify headers text based on our requirement h1 or h2
+
+await expect(
+  page.getByRole('heading', {
+    name: 'TextYouWantToVerify',
+    level: HeadingLevelNumber
+  })
+).toBeVisible();
+
+
+const textToVerify = 'Account Created!';
+const headingLevel = 2;
+
+await expect(
+  page.getByRole('heading', {
+    name: textToVerify,
+    level: headingLevel
+  })
+).toBeVisible();
+
+5. How to verify that my test or particulare action is worked or not assert/verify next dependent element is visible after performing any action
+
+6. persisting runtime data to a file. Whenever it create new email I want to push that in testData.json file
+
+7. 
+| Pattern                | Meaning                                    |
+| ---------------------- | ------------------------------------------ |
+| `/Logged in as/`       | Contains text anywhere                     |
+| `/^Logged in as/`      | Must start with text                       |
+| `/Logged in as$/`      | Must end with text                         |
+| `/^Logged in as .*$/`  | Must start with + anything after           |
+| `/^.*Logged in as.*$/` | Anything before + contain + anything after |
+
+
+8. | is called the alternation operator.
+It matches either the pattern on the left OR the pattern on the right.
+So:
+const errorText = await page.getByText(/incorrect|Invalid/i).innerText();
+
+9. 
+await successLocator.isVisible().catch(() => false)
+
+Translated to English:
+
+Try to check if locator is visible.
+If it works → return true/false normally(enter block)
+If it throws an error → instead of crashing, return false.
+
+10. Spread vs Destructuring vs rest 
+
+| Operator                    | Meaning        | Real Use                  |
+| --------------------------- | -------------- | ------------------------- |
+| `...` inside object literal | Spread         | Copy + override user data |
+| `{ key }`                   | Destructuring  | Extract login credentials |
+| `{ key, ...rest }`          | Rest           | Separate remaining fields |
+| `function(...args)`         | Rest parameter | Collect multiple products |
+
+
+11. writing a scripts in package.json to run tests with single command(refer package.json)
+
+12. Jenkins CI/CD
+-> Download 'jenkins.war' file
+-> Go to the directory 'jenkins.war' file directory on commmand prompt.
+-> Start jenkins(runs in local server). command: java -jar jenkins.war -httpPort=9090
+-> Once jenkins started you need to open localhost(http://localhost:8080/login?from=%2F) or 9090(port) 
+-> Unlock Jenkins: take pswd from command prompt(when server is started, it will print).
+([CRLF]> Please use the following password to proceed to installation:
+[CRLF]>
+[CRLF]> e37be77552884c8e835198ad0fe4552e)
+-> select 'Install suggested plugins' this one
+Create a Job: -> New Item -> give a job name and choose 'Freestyle project' 
+-> select 'Source Code Management'(None or Git). -> If None -> select 'custom workspace'(you get this option on click of 'Advanced') and put project folder directory.
+-> Build(Add build step) -> 'Execute Windows batch command': It is like command prompt or powershell in jenkins server.
+-> How to tell dynamically which script(refer package.json) we want to execute at runtime. Make the project parameterized(configer option in jenkins)
+'This project is parameterised' -> 'Add Parameter' -> 'Choice Parameter' -> give name(Script) -> put exact all scripts name package.json to 'Choices'
+in shell command 'npm run "%Script%"
+
+13. How to push your code to GitHub
+Step 1: create repository
+Step 2: Go to project directory
+ cd "C:\Playwright\playwright-automation-framework"
+Step 3: Initialize Git (If Not Already Done)
+Check if git is initialized: 
+git status
+
+If it says:
+fatal: not a git repository
+
+Then initialize:
+git init
+
+Step 4: Add .gitignore (IMPORTANT)
+Since you're working with Playwright + Node.js, create .gitignore file:
+Create file named:
+touch .gitignore
+
+Then open it:
+notepad .gitignore
+
+Add:
+node_modules/
+playwright-report/
+test-results/
+.env
+
+save this file
+
+tep 5: Add and Commit Files
+git add .
+
+
