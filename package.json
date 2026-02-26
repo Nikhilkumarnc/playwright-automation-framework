@@ -10,7 +10,8 @@
     "smoke": "npx playwright test -g '@smoke'",
     "loginAndOrder": "npx playwright test tests/completeOrderFlow",
     "accountCreation": "npx playwright test tests/accountCreation",
-    "e2e": "npx playwright test tests/e2e"
+    "e2e": "npx playwright test tests/e2e",
+    "headedFullRegression": "npx playwright test --config=customPlaywright.config.js"
   },
   "keywords": [],
   "author": "",
