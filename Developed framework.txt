@@ -186,3 +186,118 @@ Then click build number → Console Output
 You should see:
 Running tests...
 ✓ Passed
+
+
+15. Jenkins Set up cloud(Docker)
+STEP 2: Add Dockerfile in GitHub Project
+Inside your project root:
+Create file:
+Dockerfile(no extension) -> touch Dockerfile(inside your project directore through Git Bash) -> 
+-> Now verify: ls -> 
+=> Open Dockerfile in Notepad: 
+notepad Dockerfile
+=> Now paste this inside 
+FROM mcr.microsoft.com/playwright:v1.41.2-jammy
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+CMD ["npx", "playwright", "test"]
+
+=>: Add to Git
+Now run:
+git add Dockerfile
+git commit -m "Added Dockerfile for Playwright execution"
+git push
+
+STEP 3: Running From Cloud (Two Ways)
+You have 2 industry ways:
+✅ OPTION 2 — Run Automatically Using GitHub Actions (Best Practice)
+This is industry standard 🔥
+Instead of manually creating VM, we let GitHub run tests automatically.
+🔹 What is GitHub Actions?
+GitHub Actions is CI/CD system inside GitHub.
+It:
+Detects code push
+Creates temporary Linux machine
+Runs your commands
+Deletes machine after job
+Fully cloud ☁️
+
+STEP 4: Create GitHub Actions Workflow
+Inside your repo, create folder:
+.github/workflows
+Inside that create file:
+playwright.yml
+🔹 Add This Content
+
+name: Playwright Docker Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t playwright-tests .
+
+      - name: Run Tests in Docker
+        run: docker run --rm playwright-tests
+
+Push this file.
+
+🔥 What Happens Internally Now?
+
+When you push code:
+GitHub detects push
+Creates temporary Ubuntu machine
+Installs Docker (already pre-installed)
+Clones your repo
+Builds Docker image
+Runs Playwright tests
+Shows logs in GitHub UI
+Destroys machine
+No server maintenance required.
+
+
+STEP 5: Viewing Results
+In GitHub:
+Go to:
+👉 Actions tab
+You will see:
+Job status
+Test logs
+Errors if any
+
+any
+
+🔥 Important: Where Does This Actually Run?
+
+When using GitHub Actions:
+Your Laptop ❌
+Your Server ❌
+GitHub Cloud VM ✅
+Each time:
+Fresh machine
+Clean environment
+No dependency conflicts
+
+Industry-Level Flow (Real Companies)
+Developer pushes code
+       ↓
+GitHub triggers workflow
+       ↓
+Docker builds Playwright image
+       ↓
+Tests execute
+       ↓
+Report generated
+       ↓
+Team notified

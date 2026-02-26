@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["npx", "playwright", "test"]
+CMD ["npx", "playwright", "test"]z
