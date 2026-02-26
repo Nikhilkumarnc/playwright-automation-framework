@@ -9,7 +9,8 @@
     "parameterized": "npx playwright test tests/parameterized",
     "smoke": "npx playwright test -g '@smoke'",
     "loginAndOrder": "npx playwright test tests/completeOrderFlow",
-    "accountCreation": "npx playwright test tests/accountCreation"
+    "accountCreation": "npx playwright test tests/accountCreation",
+    "e2e": "npx playwright test tests/e2e"
   },
   "keywords": [],
   "author": "",

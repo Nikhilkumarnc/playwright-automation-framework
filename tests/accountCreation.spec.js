@@ -33,7 +33,5 @@ test.describe('Account Creation', () => {
         await homePage.logout();
         await expect(page).toHaveURL('https://automationexercise.com/login');
 
-        await page.pause();
-
     })
 })

@@ -20,7 +20,7 @@ const newlyCreatedEmailId = registeredUsers.emailId;
 
 // console.log('newlyCreatedEmailId: ', newlyCreatedEmailId);
 
-test('Complete Order', async ({ page }) => {
+test('Account Creation, Login and Order', async ({ page }) => {
 
     // All POM class objects
     const homePage = new HomePage(page);
@@ -69,5 +69,4 @@ test('Complete Order', async ({ page }) => {
     await homePage.logout();
     await expect(page).toHaveURL('https://automationexercise.com/login');
 
-    // await page.pause();
 })
