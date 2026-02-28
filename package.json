@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "regression": "npx playwright test",
-    "parallel": "npx playwright test tests/runParallelly",
-    "parameterized": "npx playwright test tests/parameterized",
-    "smoke": "npx playwright test -g '@smoke'",
-    "loginAndOrder": "npx playwright test tests/completeOrderFlow",
-    "accountCreation": "npx playwright test tests/accountCreation",
+    "regression": "npx playwright test tests/ui",
+    "parallel": "npx playwright test tests/ui/parallel",
+    "parameterized": "npx playwright test tests/ui/parameterized",
+    "smoke": "npx playwright test tests/ui -g '@smoke'",
+    "checkout-flow": "npx playwright test tests/ui/checkout-flow",
+    "account-creation": "npx playwright test tests/account-creation",
     "e2e": "npx playwright test tests/e2e",
-    "headedFullRegression": "npx playwright test --config=customPlaywright.config.js"
+    "headed-full-regression": "npx playwright test --config=customPlaywright.config.js"
   },
   "keywords": [],
   "author": "",

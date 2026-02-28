@@ -1,14 +1,14 @@
 import { test, expect } from '@playwright/test';
 
-import { usersData } from '../testData/usersData.js';
-import { paymentData } from '../testData/paymentData.js';
+import { usersData } from '../../testData/usersData.js';
+import { paymentData } from '../../testData/paymentData.js';
 
-import HomePage from '../pages/HomePage.js';
-import SignUpLoginPage from '../pages/SignUpLoginPage.js';
-import ProductsPage from '../pages/ProductsPage.js';
-import CartPage from '../pages/CartPage.js';
-import PaymentPage from '../pages/PaymentPage.js';
-import AccountCreateDataPage from '../pages/AccountCreationDataPage.js';
+import HomePage from '../../pages/HomePage.js';
+import SignUpLoginPage from '../../pages/SignUpLoginPage.js';
+import ProductsPage from '../../pages/ProductsPage.js';
+import CartPage from '../../pages/CartPage.js';
+import PaymentPage from '../../pages/PaymentPage.js';
+import AccountCreateDataPage from '../../pages/AccountCreationDataPage.js';
 
 
 const userData = { ...usersData.registrationUserDetails, emailId: `user${Date.now()}@test.com` };

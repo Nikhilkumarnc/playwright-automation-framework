@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
-import HomePage from '../pages/HomePage.js';
-import SignUpLoginPage from '../pages/SignUpLoginPage.js';
-import { usersData } from '../testData/usersData.js';
-import ProductsPage from '../pages/ProductsPage.js';
-import CartPage from '../pages/CartPage.js';
-import { paymentData } from '../testData/paymentData.js';
-import PaymentPage from '../pages/PaymentPage.js';
+import HomePage from '../../pages/HomePage.js';
+import SignUpLoginPage from '../../pages/SignUpLoginPage.js';
+import { usersData } from '../../testData/usersData.js';
+import ProductsPage from '../../pages/ProductsPage.js';
+import CartPage from '../../pages/CartPage.js';
+import { paymentData } from '../../testData/paymentData.js';
+import PaymentPage from '../../pages/PaymentPage.js';
 
 const registeredUsers = {
     ...usersData.registeredUsersEmailIdAndPswd

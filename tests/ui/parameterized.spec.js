@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-import { usersData } from '../testData/usersData';
+import { usersData } from '../../testData/usersData';
 
-import HomePage from '../pages/HomePage';
+import HomePage from '../../pages/HomePage';
 
 
 const parameterizedData = [...usersData.parameterizeData];

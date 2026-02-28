@@ -1,1 +1,6 @@
 "C:\Users\Admin\Downloads\jenkins.war"
+
+https://rahulshettyacademy.com/client/#/auth/login
+
+https://rahulshettyacademy.com/api/ecom/auth/login
+  
