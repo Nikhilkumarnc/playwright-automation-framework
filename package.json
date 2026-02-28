@@ -9,8 +9,8 @@
     "parameterized": "npx playwright test tests/ui/parameterized",
     "smoke": "npx playwright test tests/ui -g '@smoke'",
     "checkout-flow": "npx playwright test tests/ui/checkout-flow",
-    "account-creation": "npx playwright test tests/account-creation",
-    "e2e": "npx playwright test tests/e2e",
+    "account-creation": "npx playwright test tests/ui/account-creation",
+    "e2e": "npx playwright test tests/ui/e2e",
     "headed-full-regression": "npx playwright test --config=customPlaywright.config.js"
   },
   "keywords": [],
