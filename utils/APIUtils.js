@@ -7,11 +7,6 @@ export default class APIUtils {
     async getToken() {
         const loginResponse = await this.apiContext.post('https://rahulshettyacademy.com/api/ecom/auth/login', { data: this.loginPayload });
         const loginResponseJson = await loginResponse.json();
-        // const loginResponseBody = await loginResponse.body();
-        // const loginResponseText = await loginResponse.text();
-        // console.log('\nloginResponseJson: ', loginResponseJson);
-        // console.log('\nloginResponseBody: ', loginResponseBody);
-        // console.log('\nloginResponseText: ', loginResponseText);
         const token = loginResponseJson.token;
         return token;
     }
