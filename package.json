@@ -9,7 +9,7 @@
     "parallel": "npx playwright test tests/ui/parallel",
     "parameterized": "npx playwright test tests/ui/parameterized",
     "smoke": "npx playwright test tests/ui -g '@smoke'",
-    "regression": "npx playwright test tests/ui",
+    "ui-regression": "npx playwright test tests/ui",
     "e2e": "npx playwright test tests/ui/e2e",
     "headed-full-regression": "npx playwright test --config=playwright.config-custom.js",
     "api-test": "npx playwright test tests/api/api-test",
@@ -17,7 +17,8 @@
     "fulfill-network-rquests": "npx playwright test tests/api/fulfill-network-requests",
     "continue-network-requests": "npx playwright test tests/api/continue-network-requests",
     "abort-network-requests": "npx playwright test tests/api/abort-network-requests",
-    "api-regression": "npx playwright test tests/api"
+    "api-regression": "npx playwright test tests/api",
+    "api-ui-e2e-regression": "npx playwright test"
   },
   "keywords": [],
   "author": "",
