@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 import { usersData } from '../../testData/usersData.js';
-import { paymentData } from '../../testData/paymentData.js';
 
 import HomePage from '../../pages/HomePage.js';
 import SignUpLoginPage from '../../pages/SignUpLoginPage.js';
