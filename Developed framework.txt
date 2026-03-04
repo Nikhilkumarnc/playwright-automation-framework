@@ -307,3 +307,6 @@ Team notified
 16. How do you inject multiple tokens at multiple storage types(localStorage, sessionStorage, cookies)
 1. Login once from YI -> collect all information and store it in json file
 2. Inject hat json file directory on to the browser(you have to give context level not page level)
+
+
+17. How do you intercept the netwrok(can we inject fake response and send to the browser)?

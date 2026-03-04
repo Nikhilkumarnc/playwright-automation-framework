@@ -27,3 +27,14 @@ test('Login', async () => {
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
 
 })
+
+test('Validate tiltle', async () => {
+
+    const page = await webContext.newPage();
+    await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+    await expect(page).toHaveTitle("Let's Shop");
+
+})
+
+
+

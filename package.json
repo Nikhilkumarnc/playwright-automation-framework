@@ -11,6 +11,9 @@
     "checkout-flow": "npx playwright test tests/ui/checkout-flow",
     "account-creation": "npx playwright test tests/ui/account-creation",
     "e2e": "npx playwright test tests/ui/e2e",
+    "api-test": "npx playwright test tests/api/api-test",
+    "inject-multi-storage": "npx playwright test tests/api/inject-multi-storage",
+    "intercept-network": "npx playwright test tests/api/intercept-network",
     "headed-full-regression": "npx playwright test --config=playwright.config-custom.js"
   },
   "keywords": [],
