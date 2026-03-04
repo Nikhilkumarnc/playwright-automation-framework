@@ -9,8 +9,6 @@ import AccountCreateDataPage from '../../pages/AccountCreationDataPage.js';
 
 const userData = { ...usersData.registrationUserDetails, emailId: `user${Date.now()}@test.com` };
 
-const debitCardData = { ...paymentData.debitCardData }
-
 test.describe('Account Creation', () => {
 
     test('@smoke User account should be created', async ({ page }) => {
