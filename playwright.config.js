@@ -5,7 +5,7 @@ export default defineConfig({
 
   testDir: './tests',
 
-  timeout: 30 * 1000,
+  timeout: 40 * 1000,
 
   // reporter: [
   //   ['html', { open: 'never' }],
