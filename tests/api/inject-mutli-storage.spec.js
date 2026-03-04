@@ -21,7 +21,7 @@ test.beforeAll(async ({ browser }) => {
 
 })
 
-test('Login', async () => {
+test('injecting multi storage', async () => {
 
     const page = await webContext.newPage();
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');

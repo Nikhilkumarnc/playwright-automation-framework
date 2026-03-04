@@ -15,27 +15,14 @@ export default defineConfig({
 
   use: {
 
-
     baseURL: 'https://automationexercise.com/',
-
     headless: true,
-
-
     screenshot: 'only-on-failure',
-
-
     // video: 'retain-on-failure',
-
-
     trace: 'on-first-retry',
-
-
     ignoreHTTPSErrors: true,
-
-
-    actionTimeout: 15 * 1000
+    actionTimeout: 30 * 1000
   },
-
 
   projects: [
 

@@ -22,7 +22,7 @@ export default class APIUtils {
             }
         })
         const orderResponseJson = await orderResponse.json();
-        console.log('orderResponseJson: ', orderResponseJson);
+        // console.log('orderResponseJson: ', orderResponseJson);
         const orderId = orderResponseJson.orders[0];
         response.orderId = orderId;
         return response;

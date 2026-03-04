@@ -10,27 +10,28 @@ const orderPayload = {
     orders: [{ country: "India", productOrderedId: "6960eac0c941646b7a8b3e68" }]
 };
 
-let response;
-
 const fakeOrdersPayload = {
     data: [],
     message: "No Orders"
 };
 
-test.beforeAll(async () => {
+let response;
 
+test.beforeAll(async () => {
     const apiContext = await request.newContext();
     const apiUtils = new APIUtils(apiContext, loginPayload);
     response = await apiUtils.createOrder(orderPayload);
 });
 
-test('Network Intercept', async ({ page }) => {
+test('Intercepting network requests using fulfill', async ({ page }) => {
 
     await page.addInitScript((tokenValue) => {
         window.localStorage.setItem('token', tokenValue);
 
     }, response.token);
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+
+    // intercept network request(fulfill)
     await page.route(
         'https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*',
         async (route) => {

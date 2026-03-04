@@ -13,6 +13,7 @@ test.beforeAll(async () => {
     const apiContext = await request.newContext();
     const apiUtils = new APIUtils(apiContext, loginPayload);
     response = await apiUtils.createOrder(orderPayload);
+    // console.log('response: ', response)
 
 });
 
