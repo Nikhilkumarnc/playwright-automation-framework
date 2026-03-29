@@ -17,8 +17,8 @@ test('Login test with multiple users sequentially', async ({ page }) => {
 
     for (const user of parameterizedData) {
 
-        // console.log(`Trying login with: ${user.username}`);
-        console.log('test 5: parametrized started...');
+        console.log(`Trying login with: ${user.username}`);
+        console.log('test 6: parametrized started...');
 
         await page.locator('[data-qa="login-email"]').fill(user.username);
         await page.locator('[placeholder="Password"]').fill(user.password);
@@ -47,6 +47,6 @@ test('Login test with multiple users sequentially', async ({ page }) => {
         }
     }
 
-    console.log('test 5: parametrized executed :)');
+    console.log('test 6: parametrized executed :)');
 
 });

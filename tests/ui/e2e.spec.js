@@ -60,6 +60,7 @@ test('Account Creation, Login and Checkout', async ({ page }) => {
     await cartPage.checkout();
     await expect(page.getByText('Address Details')).toBeVisible();
     await cartPage.clickOnPlaceOrderBtn();
+    await page.locator('input[name="name_on_card"]').waitFor({state: 'visible'});
     await expect(page.locator('input[name="name_on_card"]')).toBeVisible();
 
     // Payment

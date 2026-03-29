@@ -25,6 +25,8 @@ test.beforeAll(async () => {
 
 test('Intercepting network requests using fulfill', async ({ page }) => {
 
+    console.log('test 10: for api mocking fulfilld started...');
+
     await page.addInitScript((tokenValue) => {
         window.localStorage.setItem('token', tokenValue);
 
@@ -47,5 +49,7 @@ test('Intercepting network requests using fulfill', async ({ page }) => {
 
     await page.getByRole('button', { name: 'ORDERS' }).click();
     await expect(page.getByText('You have No Orders to show at')).toBeVisible();
-    // await page.pause();
+
+    console.log('test 10: for api mocking fulfilld started...');
+
 });

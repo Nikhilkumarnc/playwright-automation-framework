@@ -25,15 +25,14 @@ test.beforeAll(async () => {
 
 test('Security test', async ({ page }) => {
 
+    console.log('test 9: api - for modify continue started...');
+
     await page.addInitScript((tokenValue) => {
         window.localStorage.setItem('token', tokenValue);
 
     }, response.token);
 
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
-
-
-
 
     await page.getByRole('button', { name: 'ORDERS' }).click();
 
@@ -51,5 +50,5 @@ test('Security test', async ({ page }) => {
 
     await viewBtn.first().click();
     await expect(page.getByText('You are not authorize to view this order')).toBeVisible();
-    await page.pause();
+    console.log('test 9: api - for modify continue executed successfully...');
 });

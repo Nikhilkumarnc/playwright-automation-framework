@@ -23,6 +23,8 @@ test.beforeAll(async ({ browser }) => {
 
 test('injecting multi storage', async () => {
 
+    console.log('test 8: api - inject multi-storage started...');
+
     const page = await webContext.newPage();
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
 
@@ -33,6 +35,7 @@ test('Validate tiltle', async () => {
     const page = await webContext.newPage();
     await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
     await expect(page).toHaveTitle("Let's Shop");
+    console.log('test 8: api - inject multi-storage executed successfully :)');
 
 })
 

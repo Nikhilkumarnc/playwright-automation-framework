@@ -19,6 +19,8 @@ test.beforeAll(async () => {
 
 test('API test  ', async ({ page }) => {
 
+    console.log('test 7: api -> orders started...');
+
     const rows = page.locator('th[scope="row"]');
 
     await page.addInitScript((value) => {
@@ -37,7 +39,7 @@ test('API test  ', async ({ page }) => {
             console.log('Order id received from API is not exists on the UI');
         }
     }
-
+    console.log('test 7: api -> orders executed sucessfully...');
     // await page.pause();
 })
 
