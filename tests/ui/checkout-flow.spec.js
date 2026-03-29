@@ -11,7 +11,7 @@ const registeredUsers = {
     ...usersData.registeredUsersEmailIdAndPswd
 }
 
-const debitCardData = { ...paymentData.debitCardData };
+const debitCardData = { ...paymentData.debitCardData }; 
 
 test('Checkout Order', async ({ page }) => {
 
