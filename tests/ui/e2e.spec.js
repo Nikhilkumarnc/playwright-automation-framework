@@ -20,7 +20,7 @@ const newlyCreatedEmailId = registeredUsers.emailId;
 
 // console.log('newlyCreatedEmailId: ', newlyCreatedEmailId);
 
-test('Account Creation, Login and Complete', async ({ page }) => {
+test('Account Creation, Login and Checkout', async ({ page }) => {
 
     // All POM class objects
     const homePage = new HomePage(page);

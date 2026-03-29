@@ -13,7 +13,7 @@ const registeredUsers = {
 
 const debitCardData = { ...paymentData.debitCardData };
 
-test('Complete Order', async ({ page }) => {
+test('Checkout Order', async ({ page }) => {
 
     // All POM class objects
     const homePage = new HomePage(page);
