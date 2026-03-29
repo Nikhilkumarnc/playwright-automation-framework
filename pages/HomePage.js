@@ -10,10 +10,12 @@ export default class HomePage {
     }
 
     async navigate() {
-        await this.page.goto('/');
+        await this.page.goto('/',  { waitUntil: 'domcontentloaded' });
+        await this.page.waitForLoadState('networkidle');
     }
 
     async clickOnSignUPOrLoginLink() {
+        await this.signUpSignInlink.waitFor({ state: 'visible' });
         await this.signUpSignInlink.click();
     }
 
