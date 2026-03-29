@@ -18,5 +18,7 @@ export default class ProductsPage {
 
     async goToCart() {
         await this.cartIcon.click();
+        await page.waitForURL('**/view_cart');
+        await expect(page.locator('#cart_info_table')).toBeVisible({ timeout: 10000 });
     }
 }

@@ -11,7 +11,7 @@ export default class HomePage {
 
     async navigate() {
         await this.page.goto('/',  { waitUntil: 'domcontentloaded' });
-        await this.page.waitForLoadState('networkidle');
+        await this.page.getByRole('link', { name: 'Signup / Login' }).waitFor();
     }
 
     async clickOnSignUPOrLoginLink() {
