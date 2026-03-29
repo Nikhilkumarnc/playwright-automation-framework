@@ -69,6 +69,6 @@ test('Account Creation, Login and Checkout', async ({ page }) => {
     // Logout after e2e test
     await homePage.logout();
     await expect(page).toHaveURL('https://automationexercise.com/login');
-    console.log('test 3: e22 executed successfully :)');
+    console.log('test 3: e2e executed successfully :)');
 
 })

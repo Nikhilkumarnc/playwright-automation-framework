@@ -86,4 +86,6 @@ test.describe.parallel('parallel', () => {
 
     })
 
+    console.log('test 4: parallel executed :)');
+    
 })
