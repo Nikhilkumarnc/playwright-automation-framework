@@ -40,7 +40,7 @@ test.describe.parallel('parallel', () => {
 
     })
 
-    test('Complete Order', async ({ page }) => {
+    test('Checkout flow', async ({ page }) => {
 
         // All POM class objects
         const homePage = new HomePage(page);
