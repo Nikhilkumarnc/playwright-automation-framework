@@ -21,7 +21,11 @@ const debitCardData = { ...paymentData.debitCardData }
 
 test.describe.parallel('parallel', () => {
 
+    console.log('test 4: parallel started...');
+
     test('User account should be created', async ({ page }) => {
+
+        console.log('test 4.1: account creation started...');
 
         // await page.pause();
         const homePage = new HomePage(page);
@@ -37,10 +41,13 @@ test.describe.parallel('parallel', () => {
         await expect(page.getByRole('heading', { name: 'Account Created!', level: 2 })).toBeVisible();
         await accountCreationDataPage.accountCreatedContinue();
         await expect(page).toHaveURL('/');
+        console.log('test 4.1: account creation executed successfully :)');
 
     })
 
     test('Checkout flow', async ({ page }) => {
+
+        console.log('test 4.2: checkout flow started...');
 
         // All POM class objects
         const homePage = new HomePage(page);
@@ -72,6 +79,10 @@ test.describe.parallel('parallel', () => {
         // Payment
         await paymentPage.completePayment(debitCardData);
         await expect(page.getByRole('heading', { name: 'Order Placed!', level: 2 })).toBeVisible();
+        await homePage.logout();
+        await expect(page).toHaveURL('https://automationexercise.com/login');
+
+        console.log('test 4.2: checkout flow executed successfully :)');
 
     })
 

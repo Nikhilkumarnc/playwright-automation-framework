@@ -12,6 +12,8 @@ test.describe('Account Creation', () => {
 
     test('@smoke User account should be created', async ({ page }) => {
 
+        console.log('test 1: account-creation started....');
+
         // await page.pause();
         const homePage = new HomePage(page);
         const signUpLoginPage = new SignUpLoginPage(page);
@@ -29,6 +31,6 @@ test.describe('Account Creation', () => {
 
         await homePage.logout();
         await expect(page).toHaveURL('https://automationexercise.com/login');
-
+        console.log('test 1: account-creation executed successfully :)');
     })
 })

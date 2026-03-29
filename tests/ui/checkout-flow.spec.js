@@ -15,6 +15,7 @@ const debitCardData = { ...paymentData.debitCardData };
 
 test('Checkout Order', async ({ page }) => {
 
+    console.log('test 2: checkout-flow started...');
     // All POM class objects
     const homePage = new HomePage(page);
     const signUpLogin = new SignUpLoginPage(page);
@@ -49,6 +50,7 @@ test('Checkout Order', async ({ page }) => {
     // Logout after order completion
     await homePage.logout();
     await expect(page).toHaveURL('https://automationexercise.com/login');
+    console.log('test 2: checkout-flow executed successfully :)');
 
     // await page.pause();
 })

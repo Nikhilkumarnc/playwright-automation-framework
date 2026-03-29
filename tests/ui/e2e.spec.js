@@ -22,6 +22,7 @@ const newlyCreatedEmailId = registeredUsers.emailId;
 
 test('Account Creation, Login and Checkout', async ({ page }) => {
 
+    console.log('test 3: e2e started...');
     // All POM class objects
     const homePage = new HomePage(page);
     const signUpLoginPage = new SignUpLoginPage(page);
@@ -68,5 +69,6 @@ test('Account Creation, Login and Checkout', async ({ page }) => {
     // Logout after e2e test
     await homePage.logout();
     await expect(page).toHaveURL('https://automationexercise.com/login');
+    console.log('test 3: e22 executed successfully :)');
 
 })
